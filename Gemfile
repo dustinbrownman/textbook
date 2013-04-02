@@ -15,6 +15,7 @@ gem 'friendly_id'
 gem 'inherited_resources'
 gem 'textacular', :require => 'textacular/rails'
 gem 'newrelic_rpm'
+gem 'ember-rails'
 
 group :assets do
   gem 'sass-rails'
