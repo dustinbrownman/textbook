@@ -2,7 +2,7 @@
 
 <h1><%= yield :title %></h1>
 
-<%= raw @lesson.content %>
+<%= raw @lesson.body %>
 
 <% if can? :update, Lesson %>
   <% if @lesson.deleted? %>

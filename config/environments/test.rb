@@ -38,4 +38,6 @@ Textbook::Application.configure do
   # Speed up tests by lowering BCrypt's cost function.
   require 'bcrypt'
   silence_warnings {BCrypt::Engine::DEFAULT_COST = BCrypt::Engine::MIN_COST}
+
+  config.ember.variant = :development
 end

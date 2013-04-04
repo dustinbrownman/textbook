@@ -6,10 +6,10 @@ class Lesson < ActiveRecord::Base
 
   default_scope order :number
 
-  attr_accessible :name, :content, :section_id, :number, :public, :deleted_at
+  attr_accessible :name, :body, :section_id, :number, :public, :deleted_at
 
   validates :name, :presence => true, :uniqueness => true
-  validates :content, :presence => true
+  validates :body, :presence => true
   validates :number, :presence => true, :numericality => {:only_integer => true}
   validates :section, :presence => true
 

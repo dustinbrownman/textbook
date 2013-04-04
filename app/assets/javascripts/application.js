@@ -12,4 +12,10 @@
 //
 //= require jquery_ujs
 //= require jquery.ui.sortable
+//= require handlebars
+//= require ember
+//= require ember-data
+//= require_self
+//= require textbook
+Textbook = Ember.Application.create();
 //= require_tree .

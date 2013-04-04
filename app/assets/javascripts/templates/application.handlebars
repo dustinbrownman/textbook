@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="span12">
+      {{#if notice}}
+        <div class="alert alert-info">{{notice}}</div>
+      {{/if}}
+      {{#if alert}}
+        <div class="alert alert-error">{{alert}}</div>
+      {{/if}}
+      {{outlet}}
+    </div>
+  </div>
+</div>
+
+<div class="navbar navbar-fixed-bottom">
+  <div class="navbar-inner">
+    <div class="container">
+      <div class="nav-collapse">
+        <div class="row">
+          <div class="span4">
+            {{left_nav}}
+          </div>
+          <div class="span4">
+            {{middle_nav}}
+          </div>
+          <div class="span4">
+            <ul class="nav pull-right">
+              {{#if user}}
+                <li>link_to 'My account', edit_user_registration_path</li>
+                <li>link_to 'Log out', destroy_user_session_path, :method => :delete</li>
+              {{else}}
+                <li>link_to 'Sign up', new_user_registration_path</li>
+                <li>link_to 'Sign in', new_user_session_path</li>
+              {{/if}}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

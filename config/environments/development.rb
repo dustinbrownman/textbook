@@ -37,4 +37,6 @@ Textbook::Application.configure do
 
   # Set hostname for emails from Devise (and anything else using ActionMailer)
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  config.ember.variant = :development
 end

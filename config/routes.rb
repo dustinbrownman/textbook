@@ -1,7 +1,7 @@
 Textbook::Application.routes.draw do
   devise_for :users
 
-  root :to => 'home#show'
+  root :to => 'application#index'
 
   match 'table_of_contents' => 'chapters#index'
 

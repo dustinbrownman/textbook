@@ -7,16 +7,20 @@ class LessonsController < InheritedResources::Base
   helper_method :chapters
 
   def index
-    if params[:search]
-      @query = params[:search]
-      @results = Lesson.advanced_search(@query)
-      render :search_results
-    elsif params[:deleted]
-      @lessons = Lesson.only_deleted
-      render :deleted
-    else
-      flash.keep
-      redirect_to table_of_contents_path
+    super do |format|
+      format.html do
+        if params[:search]
+          @query = params[:search]
+          @results = Lesson.advanced_search(@query)
+          render :search_results
+        elsif params[:deleted]
+          @lessons = Lesson.only_deleted
+          render :deleted
+        else
+          flash.keep
+          redirect_to table_of_contents_path
+        end
+      end
     end
   end
 

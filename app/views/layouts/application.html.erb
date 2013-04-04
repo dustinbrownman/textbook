@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= yield :title %></title>
+  <title></title>
 
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
   <%= csrf_meta_tags %>
   <%= jquery_include_tag :google %>
   <%= javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.js" %>
@@ -19,47 +19,6 @@
 
 </head>
 <body onload="prettyPrint()">
-  <div class="container">
-    <div class="row">
-      <div class="span12">
-        <% if notice %>
-          <div class="alert alert-info"><%= notice %></div>
-        <% end %>
-        <% if alert %>
-          <div class="alert alert-error"><%= alert %></div>
-        <% end %>
 
-        <%= yield %>
-      </div>
-    </div>
-  </div>
-
-  <div class="navbar navbar-fixed-bottom">
-    <div class="navbar-inner">
-      <div class="container">
-        <div class="nav-collapse">
-          <div class="row">
-            <div class="span4">
-              <%= yield :left_nav %>
-            </div>
-            <div class="span4">
-              <%= yield :middle_nav %>
-            </div>
-            <div class="span4">
-              <ul class="nav pull-right">
-                <% if user_signed_in? %>
-                  <li><%= link_to 'My account', edit_user_registration_path %></li>
-                  <li><%= link_to 'Log out', destroy_user_session_path, :method => :delete %></li>
-                <% else %>
-                  <li><%= link_to 'Sign up', new_user_registration_path %></li>
-                  <li><%= link_to 'Sign in', new_user_session_path %></li>
-                <% end %>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </body>
 </html>
