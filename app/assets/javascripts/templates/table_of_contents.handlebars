@@ -1,0 +1,14 @@
+<h1>Table of Contents</h1>
+
+<ul class='toc'>
+  {{#each chapter in controller}}
+    <li>
+      <span {{action toggle}}>{{chapter.name}}</span>
+      <ul>
+        {{#each section in chapter.sections}}
+          <li {{bindAttr class='hidden'}}>{{section.name}}</li>
+        {{/each}}
+      </ul>
+    </li>
+  {{/each}}
+</ul>

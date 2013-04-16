@@ -1,0 +1,12 @@
+.hidden {
+  display: none;
+}
+
+.toc li span {
+  color: #d9230f;
+  cursor: pointer;
+}
+
+.toc li span:hover {
+  text-decoration: underline;
+}

@@ -1,11 +1,11 @@
 Textbook.Router.map(function() {
-  this.route('lessons', {path: '/'})
-  this.resource('lessons');
+  this.route('table_of_contents', {path: '/'})
+  this.route('table_of_contents')
   this.resource('lesson', {path: '/lesson/:lesson_id'});
 });
 
-Textbook.LessonsRoute = Ember.Route.extend({
+Textbook.TableOfContentsRoute = Ember.Route.extend({
   model: function() {
-    return Textbook.Lesson.find();
+    return Textbook.Chapter.find();
   }
 });
