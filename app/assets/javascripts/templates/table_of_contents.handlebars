@@ -4,9 +4,16 @@
   {{#each chapter in controller}}
     <li>
       <span {{action toggle}}>{{chapter.name}}</span>
-      <ul>
-        {{#each section in chapter.sections}}
-          <li {{bindAttr class='hidden'}}>{{section.name}}</li>
+      <ul {{bindAttr class='hidden'}}>
+        {{#each section in chapter.sections itemController='section'}}
+          <li>
+            <span {{action toggle}}>{{section.name}}</span>
+            <ul {{bindAttr class='hidden'}}>
+              {{#each lesson in section.lessons}}
+                <li>{{lesson.name}}</li>
+              {{/each}}
+            </ul>
+          </li>
         {{/each}}
       </ul>
     </li>
