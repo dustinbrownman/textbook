@@ -1,5 +1,6 @@
-student = User.create(email: 'student@learnhowtoprogram.com', password: 'ilovetolearn')
-author = User.create(email: 'author@learnhowtoprogram.com', password: 'ilovetoteach').update_column(:author, true)
-chapter = Chapter.create(name: 'Chapter 1', number: 1)
-section = Section.create(name: 'Section 1', number: 1, chapter_id: chapter.id)
-lesson = Lesson.create(name: 'Lesson 1', body: '<p>I am a lesson.</p>', number: 1, section_id: section.id)
+require 'factory_girl_rails'
+require 'ffaker'
+
+FactoryGirl.create :author
+FactoryGirl.create :student
+8.times {FactoryGirl.create :lesson}

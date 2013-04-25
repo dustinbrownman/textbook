@@ -18,7 +18,7 @@ FactoryGirl.define do
 
   factory :section do
     name {Faker::Lorem.words.join}
-    association :chapter, :factory => :chapter
+    chapter
     public true
     sequence(:number) {|n| n}
   end
@@ -26,7 +26,7 @@ FactoryGirl.define do
   factory :lesson do
     name {Faker::Lorem.words.join}
     body {Faker::Lorem.paragraph}
-    association :section, :factory => :section
+    section
     sequence(:number) {|n| n}
     public true
   end
