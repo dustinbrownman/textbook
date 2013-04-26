@@ -16,6 +16,7 @@ gem 'inherited_resources'
 gem 'textacular', :require => 'textacular/rails'
 gem 'newrelic_rpm'
 gem 'ember-rails', '>= 0.11.1'
+gem 'ember-source', '>= 1.0.0.rc3.1'
 
 group :assets do
   gem 'sass-rails'
@@ -36,6 +37,8 @@ end
 group :test, :development do
   gem 'rspec-rails'
   gem 'jazz_hands'
+  gem 'konacha'
+  gem 'konacha-chai-matchers'
 end
 
 group :test do
